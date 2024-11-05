@@ -6,8 +6,10 @@ import { orange, green, blue } from "@mui/material/colors";
 
 import "./TodoListItem.css";
 
-import { useState, useEffect } from "react";
-export default function TodoListItem({ taskItem, completeTask, setDeleteModalStat, deleteModalStat, editModalStat, setEditModalStat }) {
+import { useState, useEffect, useContext } from "react";
+import { TodoListContext } from "../../Contexts/TodoListContext";
+export default function TodoListItem({ taskItem }) {
+	let { setEditModalStat, editModalStat, setDeleteModalStat, deleteModalStat, completeTask } = useContext(TodoListContext);
 	const [taskStat, setTaskStat] = useState({
 		isEditStat: false,
 		isDeleteStat: false,
@@ -15,14 +17,14 @@ export default function TodoListItem({ taskItem, completeTask, setDeleteModalSta
 
 	useEffect(() => {
 		// Reset `isDeleteStat` when the modal closes
-		if (!deleteModalStat.isVisible) {
+		if (!deleteModalStat.isVisible && taskStat.isDeleteStat) {
 			setTaskStat((prev) => ({ ...prev, isDeleteStat: false }));
 		}
 	}, [deleteModalStat.isVisible]);
 
 	useEffect(() => {
 		// Reset `isEditStat` when the modal closes
-		if (!editModalStat.isVisible) {
+		if (!editModalStat.isVisible && taskStat.isEditStat) {
 			setTaskStat((prev) => ({ ...prev, isEditStat: false }));
 		}
 	}, [editModalStat.isVisible]);
