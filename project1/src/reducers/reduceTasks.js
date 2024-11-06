@@ -6,3 +6,4 @@ export function reduceTasks(tasksReducer, action) {
 	if (type === "completeTask") return tasksReducer.map((task) => (task.id === payload.taskId ? { ...task, isCompleted: !task.isCompleted } : task));
 	if (type === "deleteTask") return tasksReducer.filter((task) => task.id != payload.taskId);
 }
+// comment 
