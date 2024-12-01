@@ -1,5 +1,7 @@
 # Weather App Project
 
+[Demo](https://ayoubmajid67.github.io/ReactProjects/project2/build/index.html)
+
 ![Weather App Screenshot](./logo.png)
 
 This Weather App provides users with real-time weather information for cities in Morocco. It includes features like displaying current temperature, weather conditions, and min/max temperatures. The app supports both Arabic and English languages, uses the OpenWeather API for weather data, and integrates location-based weather fetching.
