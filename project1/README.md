@@ -1,7 +1,7 @@
 
 # Todo List Project
 
-[Demo](https://ayoubmajid67.github.io/ReactProjects/project2/build/index.html)
+[Demo](https://ayoubmajid67.github.io/ReactProjects/project1/build/index.html)
 
 ![Todo List Screenshot](./logo.png) 
 
