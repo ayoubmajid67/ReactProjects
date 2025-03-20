@@ -6,9 +6,10 @@
      
     button{
       padding: 10px 20px;
-      background-color: hsl(71, 85%, 41%);
+      color: white !important;
+      background-color: hsl(160, 70%, 30%);
      &:disabled{
-      background-color: hsla(71, 24%, 52%, 0.809);
+      background-color: hsl(220, 30%, 15%);
      }
     }
 

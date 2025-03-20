@@ -1,67 +1,58 @@
 .TodoListItemComponentClass {
     padding: 14px 10px;
-    background-color: hsla(71, 24%, 52%, 0.809);
-    color: white;
+    background-color: #84adff; /* Dark blue-gray */
+    color: #f8f9fa; /* Light text for contrast */
     border-radius: 5px;
     transition: 0.3s;
 
-
     &>.leftSide {
         flex-grow: 1;
-
     }
 
     &>.rightSide {
-
-
         .controlIcon {
             padding: 10px;
-            border: 1px solid black;
+            border: 1px solid #00bcd4; /* Cyan border */
             border-radius: 50%;
-
-            background-color: white;
-
+            background-color: hsl(220, 30%, 15%); /* Darker background */
+            color: #00bcd4; /* Neon cyan */
+            
             svg {
                 font-size: 15.2px;
             }
-
         }
-
     }
 
     &.completeMode {
-
-        background-color: hsl(71, 85%, 41%);
+        background-color: hsl(160, 70%, 30%); /* Teal green */
+        
         &>.leftSide {
-            &>.name{
-             text-decoration: line-through;
+            &>.name {
+                text-decoration: line-through;
+                color: hsl(160, 30%, 70%); /* Faded green */
             }
-    
         }
 
         &>.rightSide {
             .controlIcon {
                 &.checkIcon {
-                    background-color: hsla(71, 91%, 21%, 0.931);
+                    background-color: hsl(160, 90%, 25%);
                     color: white !important;
                     border-color: white !important;
-
                 }
             }
         }
-
     }
 
     &.deleteMode {
-        background-color: #ee6f05;
-        border-left: 10px solid #e62e05;
+        background-color: hsl(10, 80%, 40%); /* Bright red-orange */
+        border-left: 10px solid hsl(10, 90%, 30%); /* Darker red */
         transform: scale(1.03);
     }
+    
     &.editMode {
-        background-color: #1a68bf;
-        border-left: 10px solid #174d8b;
+        background-color: hsl(220, 80%, 50%); /* Bright blue */
+        border-left: 10px solid hsl(220, 70%, 40%); /* Darker blue */
         transform: scale(1.03);
     }
-    
-    
 }

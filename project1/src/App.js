@@ -3,7 +3,7 @@ import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
-import { Container } from "@mui/material";
+
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import BoxHeader from "./Components/ToDoListHeader/BoxHeader";
@@ -29,10 +29,10 @@ function App() {
 	const theme = createTheme({
 		palette: {
 			primary: {
-				main: "#a1c110",
+				main: "hsl(160, 70%, 30%)",
 			},
 			secondary: {
-				main: "#97a267",
+				main: "hsl(220, 30%, 15%)",
 				light: "#ababa9",
 			},
 			thirdly: {
@@ -41,6 +41,7 @@ function App() {
 		},
 	});
 
+	
 	const [filterStat, setFilterStat] = useState("all");
 
 	const [tasksReducer, dispatchReducer] = useReducer(reduceTasks, getTasksFromLs());
@@ -110,20 +111,24 @@ function App() {
 		<ThemeProvider theme={theme}>
 			<ToastProvider>
 				<div className="App">
-					<Container maxWidth="md">
+					
+					<BoxHeader />
 						<div spacing={2} className="ToDoListParent">
-							<BoxHeader />
-							<TodoListFilter filterStat={filterStat} setFilterStat={setFilterStat} />
+				
+							
+						
 
 							<TodoListContext.Provider value={{ setEditModalStat, editModalStat, setDeleteModalStat, deleteModalStat, completeTask }}>
 								<TodoList tasksReducer={tasksReducer} filterStat={filterStat}></TodoList>
 							</TodoListContext.Provider>
+						
+							<TodoListFilter filterStat={filterStat} setFilterStat={setFilterStat} />
 							<AddTaskForm addTask={addTask}></AddTaskForm>
 						</div>
 
 						<DeleteTaskModal taskId={deleteModalStat.taskId} deleteTask={deleteTask} deleteModalStat={deleteModalStat} closeDeleteModal={closeDeleteModal} />
 						<EditTaskModal taskId={deleteModalStat.taskId} editTask={editTask} editModalStat={editModalStat} setEditModalStat={setEditModalStat} closeEditModal={closeEditModal} />
-					</Container>
+					
 				</div>
 			</ToastProvider>
 		</ThemeProvider>

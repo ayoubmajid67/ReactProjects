@@ -1,4 +1,5 @@
 .TodoListFilterClass {
+margin-top: 20px;
 
     &>button {
         border-radius: 0;
